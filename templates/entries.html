@@ -1,1 +1,30 @@
+<!doctype html>
+<html>
+<head><title>Your Entries</title></head>
+<body>
+  <h2>Your Diary Entries</h2>
+  <a href="/add">Add New</a> | <a href="/change_password">Change Password</a> | <a href="/logout">Logout</a>
+  <hr>
+  {% if entries %}
+    {% for e in entries %}
+      <div style="border:1px solid #ccc;padding:10px;margin:10px 0;">
+        <strong>{{ e.title }}</strong><br>
+        <small>Created: {{ e.created_at.strftime("%Y-%m-%d %H:%M") }} | Updated: {{ e.updated_at.strftime("%Y-%m-%d %H:%M") }}</small>
+        <p>{{ e.description }}</p>
+        <a href="/edit/{{ e.id }}">Edit</a>
+        <form style="display:inline" method="POST" action="/delete/{{ e.id }}">
+          <button type="submit" onclick="return confirm('Delete?')">Delete</button>
+        </form>
+      </div>
+    {% endfor %}
 
+    <div>
+      {% if page > 1 %}<a href="{{ url_for('entries', page=page-1) }}">⬅ Prev</a>{% endif %}
+      Page {{ page }} of {{ pages }}
+      {% if page < pages %}<a href="{{ url_for('entries', page=page+1) }}">Next ➡</a>{% endif %}
+    </div>
+  {% else %}
+    <p>No entries yet. <a href="/add">Add one</a></p>
+  {% endif %}
+</body>
+</html>
