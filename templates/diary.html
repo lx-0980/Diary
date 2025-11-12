@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head><title>Add Entry</title></head>
+<body>
+  <h2>Add New Entry</h2>
+  <form method="POST">
+    <input name="title" placeholder="Title" required><br><br>
+    <textarea name="description" rows="10" cols="60" placeholder="Write..." required></textarea><br><br>
+    <button type="submit">Save</button>
+  </form>
+  <p><a href="/entries">Back to entries</a> | <a href="/logout">Logout</a></p>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}<ul>{% for m in messages %}<li>{{m}}</li>{% endfor %}</ul>{% endif %}
+  {% endwith %}
+</body>
+</html>
