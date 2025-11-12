@@ -1,0 +1,138 @@
+/* ---------------------------
+   Global Layout & Typography
+----------------------------*/
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f7f9fb;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+h2 {
+  text-align: center;
+  color: #2b2d42;
+}
+
+/* ---------------------------
+   Buttons & Inputs
+----------------------------*/
+button, input[type="submit"] {
+  background: #2b2d42;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+button:hover, input[type="submit"]:hover {
+  background: #3d4370;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+a {
+  color: #2b2d42;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------
+   Flash Messages
+----------------------------*/
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  color: #d90429;
+  font-weight: bold;
+}
+
+/* ---------------------------
+   Entries Cards
+----------------------------*/
+.entry {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 15px 0;
+  padding: 15px;
+  background: #f9fafc;
+}
+
+.entry strong {
+  font-size: 18px;
+  color: #222;
+}
+
+.entry small {
+  color: #777;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.entry p {
+  line-height: 1.5;
+  color: #444;
+}
+
+.entry form {
+  display: inline;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+/* ---------------------------
+   Header Navigation
+----------------------------*/
+.nav {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.nav a {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 15px;
+    padding: 20px;
+  }
+  textarea {
+    height: 120px;
+  }
+}
